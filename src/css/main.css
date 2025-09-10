@@ -1,1 +1,98 @@
-/* Your CSS here. */
+/* ---------- Theme variables: adjust these to change overall style ---------- */
+:root {
+    --page-bg: #f5f6f8;           /* Page background */
+    --card-bg: #666a6e;           /* Card background */
+    --text-main: #ffffff;         /* Main text color */
+    --text-dim: #e8e8e8;          /* Secondary text color */
+    --accent: #9ad1ff;            /* Accent color for links/buttons */
+    --ring: rgba(255,255,255,.3); /* Avatar ring */
+    --shadow: 0 18px 40px rgba(31,41,55,.28);
+  }
+  
+  /* Page */
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+    background:
+      radial-gradient(1000px 500px at -10% -10%, #ffffff 0%, transparent 60%),
+      radial-gradient(1200px 600px at 110% -20%, #ffffff 0%, transparent 65%),
+      var(--page-bg); /* Soft background */
+    color: #222;
+  }
+  
+  /* Card container */
+  .card {
+    background: linear-gradient(180deg, #6d7276 0%, var(--card-bg) 70%);
+    max-width: 760px;
+    margin: clamp(40px, 7vh, 80px) auto;
+    padding: clamp(28px, 5vw, 56px);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    color: var(--text-main);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Spacing between card elements */
+  .card > * + * { margin-top: 18px; }
+  
+  /* Avatar image */
+  .avatar {
+    width: 150px; height: 150px; object-fit: cover;
+    display: block; margin: 0 auto 8px;
+    border-radius: 12px;
+    box-shadow:
+      0 6px 18px rgba(0,0,0,.25),
+      0 0 0 6px var(--ring);
+  }
+  
+  /* Title and subtitle */
+  h1 {
+    font-weight: 800;
+    letter-spacing: .4px;
+    font-size: clamp(28px, 5vw, 44px);
+    margin: 10px 0 0;
+  }
+  .subtitle { color: var(--text-dim); margin-top: 4px; }
+  
+  /* Links */
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+    transition: filter .2s ease, transform .2s ease;
+  }
+  a:hover { filter: brightness(1.15); }
+  
+  /* GitHub button */
+  a.gh-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(2px);
+    text-decoration: none;
+    margin-top: 4px;
+  }
+  a.gh-btn:hover { transform: translateY(-1px); }
+  
+  /* Bio section */
+  .bio {
+    margin-top: 22px;
+    text-align: left; /* Allowed: left or center */
+    color: var(--text-main);
+    opacity: .95;
+  }
+  .bio p { margin: 0 0 14px; }
+  
+  /* Divider */
+  .hr {
+    width: 80%;
+    height: 1px;
+    margin: 18px auto 6px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), trans
+  
